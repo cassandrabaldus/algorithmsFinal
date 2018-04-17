@@ -17,8 +17,10 @@ public class TextSearching {
     public static void main(String[] args) {
         String txt = "AABAACAADAABAAABAA";
         String pattern = "AABA";
+        int q = 101; //prime number
+        
         naive.search(txt, pattern);
-        KMP.search(txt, pattern);
+        RabinKarp.search(txt, pattern, q);
     }
     
 }
