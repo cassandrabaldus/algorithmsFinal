@@ -21,6 +21,7 @@ public class TextSearching {
         
         naive.search(txt, pattern);
         RabinKarp.search(txt, pattern, q);
+        KMP.search(txt, pattern);
     }
     
 }
