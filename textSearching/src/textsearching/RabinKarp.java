@@ -25,16 +25,15 @@ public class RabinKarp {
         int M = pat.length();
         int N = txt.length();
         int i, j;
-        int p = 0; // hash value for pattern
-        int t = 0; // hash value for txt
+        int p = 0; // hash of pattern
+        int t = 0; // hash of txt
         int h = 1;
      
         // The value of h would be "pow(d, M-1)%q"
         for (i = 0; i < M-1; i++)
             h = (h*d)%q;
      
-        // Calculate the hash value of pattern and first
-        // window of text
+        //hash of pattern and first
         for (i = 0; i < M; i++)
         {
             p = (d*p + pat.charAt(i))%q;
