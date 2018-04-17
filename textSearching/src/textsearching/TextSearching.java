@@ -18,6 +18,7 @@ public class TextSearching {
         String txt = "AABAACAADAABAAABAA";
         String pattern = "AABA";
         naive.search(txt, pattern);
+        KMP.search(txt, pattern);
     }
     
 }
