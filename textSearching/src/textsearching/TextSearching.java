@@ -19,9 +19,20 @@ public class TextSearching {
         String pattern = "AABA";
         int q = 101; //prime number
         
+        long start = System.nanoTime();
         naive.search(txt, pattern);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(elapsedTime);
+        
+        start = System.nanoTime();
         RabinKarp.search(txt, pattern, q);
+        elapsedTime = System.nanoTime() - start;
+        System.out.println(elapsedTime);
+        
+        start = System.nanoTime();
         KMP.search(txt, pattern);
+        elapsedTime = System.nanoTime() - start;
+        System.out.println(elapsedTime);
     }
     
 }
