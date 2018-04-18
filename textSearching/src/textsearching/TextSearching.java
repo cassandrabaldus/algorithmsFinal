@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package textsearching;
+import java.io.*;
+import java.nio.file.*;
 
 /**
  *
@@ -14,9 +16,11 @@ public class TextSearching {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        String txt = "AABAACAADAABAAABAA";
-        String pattern = "AABA";
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        String txt = "";
+        txt = new String(Files.readAllBytes(Paths.get("alice")));
+        String pattern = "Alice";
+        
         int q = 101; //prime number
         
         long start = System.nanoTime();
