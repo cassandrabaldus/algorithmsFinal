@@ -6,6 +6,7 @@
 package textsearching;
 import java.io.*;
 import java.nio.file.*;
+import java.util.*;
 
 /**
  *
@@ -17,8 +18,9 @@ public class TextSearching {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        String txt = "";
-        txt = new String(Files.readAllBytes(Paths.get("alice")));
+        String txt = ""; 
+        txt = new String(Files.readAllBytes(Paths.get("alice.txt")));
+        
         String pattern = "Alice";
         
         int q = 101; //prime number
