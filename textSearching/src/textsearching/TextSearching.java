@@ -25,7 +25,7 @@ public class TextSearching {
         
         System.out.println("search for: ");
         String pattern = in.nextLine();
-        System.out.println("how many itterations? : ");
+        System.out.println("how many iterations? : ");
         int itter = in.nextInt();
         long elapsedTimeNaive = 0;
         long elapsedTimeRabin = 0;
@@ -49,9 +49,12 @@ public class TextSearching {
         elapsedTimeRabin = elapsedTimeRabin/itter;
         elapsedTimeKMP = elapsedTimeKMP/itter;
             
-        System.out.println(elapsedTimeNaive);
-        System.out.println(elapsedTimeRabin);
-        System.out.println(elapsedTimeKMP);
+        System.out.println("Naive takes an average of " + elapsedTimeNaive
+        + " nanoseconds.");
+        System.out.println("Rabin Karp takes an average of " + elapsedTimeRabin
+        + " nanoseconds.");
+        System.out.println("KMP takes an average of " + elapsedTimeKMP
+        + " nanoseconds.");
         
         System.out.println("Naive = " + naive.search(txt, pattern));
         System.out.println("Rabin Karp = " + RabinKarp.search(txt, pattern, q));
