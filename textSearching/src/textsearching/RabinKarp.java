@@ -28,6 +28,7 @@ public class RabinKarp {
         int p = 0; // hash of pattern
         int t = 0; // hash of txt
         int h = 1;
+        int count = 0;
      
         // The value of h would be "pow(d, M-1)%q"
         for (i = 0; i < M-1; i++)
@@ -58,7 +59,7 @@ public class RabinKarp {
      
                 // if p == t and pat[0...M-1] = txt[i, i+1, ...i+M-1]
                 if (j == M)
-                    System.out.println("Pattern found at index " + i);
+                    count++;
             }
      
             // Calculate hash value for next window of text: Remove
@@ -73,9 +74,8 @@ public class RabinKarp {
                 t = (t + q);
             }
         }
+        System.out.println("Alice is found " + count + " times");
     }
-     
-    /* Driver program to test above function */
 }
  
 // This code is contributed by nuclode

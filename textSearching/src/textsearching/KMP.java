@@ -14,6 +14,7 @@ public class KMP {
     {
         int M = pat.length();
         int N = txt.length();
+        int count = 0;
  
         // create lps[] that will hold the longest prefix suffix values for pattern
         int lps[] = new int[M];
@@ -33,8 +34,7 @@ public class KMP {
             }
             if (j == M)
             {
-                System.out.println("Found pattern "+
-                              "at index " + (i-j));
+                count++;
                 j = lps[j-1];
             }
  
@@ -49,6 +49,7 @@ public class KMP {
                     i = i+1;
             }
         }
+        System.out.println("Alice is found " + count + " times");
     }
  
     static void computeLPSArray(String pat, int M, int lps[])

@@ -13,6 +13,7 @@ public class naive {
     public static void search(String txt, String pattern){
         int M = pattern.length();
         int N = txt.length();
+        int count = 0;
  
         /*iterate through text*/
         for (int i = 0; i <= N - M; i++) {
@@ -26,7 +27,8 @@ public class naive {
                     break;
  
             if (j == M) // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
-                System.out.println("Pattern found at index " + i + ".");
+                count++;
         }
+        System.out.println("Alice is found " + count++ + " times.");
     }
 }
