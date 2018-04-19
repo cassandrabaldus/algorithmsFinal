@@ -18,8 +18,7 @@ public class TextSearching {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        String txt = ""; 
-        txt = new String(Files.readAllBytes(Paths.get("alice.txt")));
+        String txt = new String(Files.readAllBytes(Paths.get("alice.txt")));
         
         String pattern = "Alice";
         
@@ -39,6 +38,6 @@ public class TextSearching {
         KMP.search(txt, pattern);
         elapsedTime = System.nanoTime() - start;
         System.out.println(elapsedTime);
-    }
+    }    
     
 }
