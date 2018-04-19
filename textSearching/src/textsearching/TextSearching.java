@@ -19,25 +19,43 @@ public class TextSearching {
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         String txt = new String(Files.readAllBytes(Paths.get("alice.txt")));
-        
-        String pattern = "Alice";
-        
+       
         int q = 101; //prime number
+        Scanner in = new Scanner(System.in);
         
-        long start = System.nanoTime();
-        naive.search(txt, pattern);
-        long elapsedTime = System.nanoTime() - start;
-        System.out.println(elapsedTime);
+        System.out.println("search for: ");
+        String pattern = in.nextLine();
+        System.out.println("how many itterations? : ");
+        int itter = in.nextInt();
+        long elapsedTimeNaive = 0;
+        long elapsedTimeRabin = 0;
+        long elapsedTimeKMP = 0;
         
-        start = System.nanoTime();
-        RabinKarp.search(txt, pattern, q);
-        elapsedTime = System.nanoTime() - start;
-        System.out.println(elapsedTime);
+        for(int i = 0;i < itter; i++){
+            long start = System.nanoTime();
+            naive.search(txt, pattern);
+            elapsedTimeNaive += System.nanoTime() - start;
+
+            start = System.nanoTime();
+            RabinKarp.search(txt, pattern, q);
+            elapsedTimeRabin += System.nanoTime() - start;
+
+            start = System.nanoTime();
+            KMP.search(txt, pattern);
+            elapsedTimeKMP += System.nanoTime() - start;
+        }
         
-        start = System.nanoTime();
-        KMP.search(txt, pattern);
-        elapsedTime = System.nanoTime() - start;
-        System.out.println(elapsedTime);
+        elapsedTimeNaive = elapsedTimeNaive/itter;
+        elapsedTimeRabin = elapsedTimeRabin/itter;
+        elapsedTimeKMP = elapsedTimeKMP/itter;
+            
+        System.out.println(elapsedTimeNaive);
+        System.out.println(elapsedTimeRabin);
+        System.out.println(elapsedTimeKMP);
+        
+        System.out.println("Naive = " + naive.search(txt, pattern));
+        System.out.println("Rabin Karp = " + RabinKarp.search(txt, pattern, q));
+        System.out.println("KMP = " + KMP.search(txt, pattern));
     }    
     
 }

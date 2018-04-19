@@ -10,7 +10,7 @@ package textsearching;
  * @author S523164
  */
 public class naive {
-    public static void search(String txt, String pattern){
+    public static int search(String txt, String pattern){
         int M = pattern.length();
         int N = txt.length();
         int count = 0;
@@ -29,6 +29,7 @@ public class naive {
             if (j == M) // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
                 count++;
         }
-        System.out.println("Alice is found " + count++ + " times.");
+        return count;
+        //System.out.println("Alice is found " + count++ + " times.");
     }
 }

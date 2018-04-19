@@ -20,7 +20,7 @@ public class RabinKarp {
         txt -> text
         q -> A prime number
     */
-    static void search(String txt, String pat, int q)
+    static int search(String txt, String pat, int q)
     {
         int M = pat.length();
         int N = txt.length();
@@ -74,7 +74,8 @@ public class RabinKarp {
                 t = (t + q);
             }
         }
-        System.out.println("Alice is found " + count + " times");
+        return count;
+        //System.out.println("Alice is found " + count + " times");
     }
 }
  

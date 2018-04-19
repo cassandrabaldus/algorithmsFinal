@@ -10,7 +10,7 @@ package textsearching;
  * @author S523164
  */
 public class KMP {
-    static void search(String txt, String pat)
+    static int search(String txt, String pat)
     {
         int M = pat.length();
         int N = txt.length();
@@ -49,7 +49,8 @@ public class KMP {
                     i = i+1;
             }
         }
-        System.out.println("Alice is found " + count + " times");
+        return count;
+        //System.out.println("Alice is found " + count + " times");
     }
  
     static void computeLPSArray(String pat, int M, int lps[])
